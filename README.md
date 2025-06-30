@@ -223,3 +223,9 @@ if __name__ == "__main__":
 app.run(host="0.0.0.0", port=5000, debug=True)
 
 # raspberryPi
+![image](https://github.com/user-attachments/assets/3fbe4494-1c38-440b-a6d3-9a5872a2bb1a)
+![image](https://github.com/user-attachments/assets/eebe382a-5183-4b6b-bb0e-03bbd02efdc7)
+![image](https://github.com/user-attachments/assets/7b5e91c4-eaed-4e92-9981-84f78442fd1a)
+
+
+
