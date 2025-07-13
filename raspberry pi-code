@@ -1,0 +1,19 @@
+from flask import Flask, request, jsonify, render_template
+app = Flask(__name__)
+# Store sensor data
+sensor_data = { "distance1": 0, "distance2": 0, "distance3": 0, "motion": 0, "micAnalog": 0, "micDigital": 0
+}
+@app.route("/")
+def index():
+return render_template("index.html", data=sensor_data)
+@app.route("/sensor-data", methods=["POST"])
+def receive_data():
+global sensor_data
+sensor_data = request.get_json()
+print("Received Data:", sensor_data)
+return jsonify({"message": "Data received"}), 200
+@app.route("/data")
+def get_data():
+return jsonify(sensor_data)
+if __name__ == "__main__":
+app.run(host="0.0.0.0", port=5000, debug=True)
