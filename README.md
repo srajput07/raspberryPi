@@ -2,7 +2,7 @@
  
 A real-time IoT-based smart surveillance system for border/military zones using ESP32, ultrasonic sensors, PIR, microphone, and Raspberry Pi with Flask to classify and display threat levels on a web dashboard.
 
-# Features
+#Features
 ESP32 monitors:
  3× Ultrasonic distances
  1× PIR sensor (motion)
@@ -15,8 +15,8 @@ Sends JSON data to Raspberry Pi via HTTP
 Flask server updates a live web dashboard
 Real-time alerts with colored LED indicators
 
-# Components Used
-Component	Description
+
+#Component	Description
 ESP32 Dev Board	Main controller for sensors
 HC-SR04 (3x)	Distance measurement (180° view)
 PIR Sensor	Human/animal motion detection
