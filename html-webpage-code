@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Army surviellance System</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #1a1a1a;
+color: #00ff00;
+text-align: center;
+  padding: 20px;
+}
+h1 {
+border-bottom: 2px solid #00ff00;
+display: inline-block;
+padding-bottom: 5px;
+}
+.container {
+display: inline-block;
+text-align: left;
+padding: 20px;
+border: 2px solid #00ff00;
+border-radius: 10px;
+background-color: #222;
+}
+.alert {
+font-weight: bold;
+color: red;
+}
+</style>
+<script>
+function fetchData() {
+fetch('/data')
+.then(response => response.json())
+.then(data => {
+document.getElementById("dist1").innerText = data.distance1 + " cm";
+  document.getElementById("dist2").innerText = data.distance2 + " cm";
+document.getElementById("dist3").innerText = data.distance3 + " cm";
+document.getElementById("motion").innerText = data.motion ? "Detected" : "No Motion";
+document.getElementById("micAnalog").innerText = data.micAnalog;
+document.getElementById("micDigital").innerText = data.micDigital ? "High" : "Low";
+classifyThreat(data);
+});
+}
+function classifyThreat(data) {
+let threatLevel = "No Threat";
+if (data.micAnalog > 500) {
+threatLevel = "Heavy Vehicle or Explosion";
+} else if (data.micAnalog > 300) {
+threatLevel = "Light Vehicle or Group Movement";
+} else if (data.micAnalog > 100) {
+threatLevel = "Single Person Movement";
+}
+document.getElementById("threat").innerText = threatLevel;
+}
+setInterval(fetchData, 1000);
+</script>
+</head>
+<body onload="fetchData()">
+<h1>Army surviellance System </h1>
+<div class="container">
+<p><strong>Ultrasonic Sensor 1:</strong> <span id="dist1"></span></p>
+<p><strong>Ultrasonic Sensor 2:</strong> <span id="dist2"></span></p>
+<p><strong>Ultrasonic Sensor 3:</strong> <span id="dist3"></span></p>
+<p><strong>PIR Motion Sensor:</strong> <span id="motion"></span></p>
+<p><strong>Microphone Sensitivity (Analog):</strong> <span id="micAnalog"></span></p>
+<p><strong>Microphone Digital Signal:</strong> <span id="micDigital"></span></p>
+<p class="alert"><strong>Threat Level:</strong> <span id="threat">No Threat</span></p>
+</div>
+</body>
+</html>
