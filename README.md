@@ -61,4 +61,11 @@ Cloud integration or mobile app
 Servo motor to rotate camera towards threat
 
 
+![image](https://github.com/user-attachments/assets/3fbe4494-1c38-440b-a6d3-9a5872a2bb1a)
+![image](https://github.com/user-attachments/assets/eebe382a-5183-4b6b-bb0e-03bbd02efdc7)
+![image](https://github.com/user-attachments/assets/7b5e91c4-eaed-4e92-9981-84f78442fd1a)
+![WhatsApp Image 2025-03-08 at 22 31 37_172fa9e4](https://github.com/user-attachments/assets/7b5488f0-2b96-4774-bdf1-034be7e74d49)
+
+
+
 
